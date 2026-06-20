@@ -17,7 +17,7 @@ body.blackpink{ --acc:#ff2d8e; --acc2:#ff9ccb; }         /* 桃紅 */
 body.gd{ --acc:#ff4d4d; --acc2:#ffb0b0; }                /* peaceminusone 紅 */
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,"Noto Sans TC","Segoe UI",system-ui,sans-serif;font-size:15px;line-height:1.6}
-header{position:sticky;top:0;z-index:5;background:linear-gradient(180deg,var(--bg),rgba(13,13,18,.86));backdrop-filter:blur(8px);padding:12px 14px 8px;border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:5;background:linear-gradient(180deg,var(--bg),rgba(13,13,18,.86));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:12px 14px 8px;border-bottom:1px solid var(--line)}
 h1{margin:0;font-size:20px;letter-spacing:.5px}
 h1 b{color:var(--acc)}
 .sub{color:var(--dim);font-size:13px;margin-top:2px}
@@ -64,7 +64,7 @@ h1 b{color:var(--acc)}
 </style></head><body>
 <header>
   <h1>🎤 唱 <b>K-POP</b> 學韓語</h1>
-  <div class="sub">跟著愛的偶像唱、把韓文唱進心裡 · 點 🔊 聽韓語發音</div>
+  <div class="sub">歷年演唱會必唱・應援必跟 跟著唱學韓語 · 點 🔊 聽韓語發音</div>
   <div class="tabs" id="tabs"></div>
 </header>
 <div class="wrap" id="wrap"></div>
@@ -106,6 +106,8 @@ cortis:{name:"CORTIS",emoji:"🟢",cls:"cortis",songs:[
 bigbang:{name:"BIGBANG",emoji:"👑",cls:"bigbang",songs:[
  {ko:"거짓말","en":"Lies",era:"經典 · 2007",story:"BIGBANG 真正爆紅的代表作,一聽就會記住的口哨前奏。",chorus:"副歌「거짓말 거짓말 거짓말」三連發最好跟,先抓這句。",tip:"거짓말 geo-jit-mal,ㅓ 放鬆別嘟嘴。",voc:[["거짓말","geojitmal","謊言"],["미안해","mianhae","對不起"],["사랑","sarang","愛"],["눈물","nunmul","眼淚"],["이별","ibyeol","離別"],["혼자","honja","獨自"],["마음","maeum","心"]]},
  {ko:"하루하루","en":"Haru Haru",era:"經典 · 2008",story:"國民級分手情歌,旋律抒情、副歌大合唱必跟。",chorus:"「하루하루」反覆句,慢速最好練。",tip:"하루 ha-ru,ㄹ 輕彈。",voc:[["하루","haru","一天"],["잘가","jalga","好走"],["눈물","nunmul","眼淚"],["사랑","sarang","愛"],["보고싶어","bogosipeo","想你"],["아파","apa","痛"],["다시","dasi","再"]]},
+ {ko:"Tonight","en":"Tonight",era:"經典 · 2011",story:"明亮抒情的舞曲,演唱會中段常唱、氣氛溫暖。",chorus:"「tonight」拉長句好跟。",tip:"tonight 尾音 t 輕收。",voc:[["오늘밤","oneulbam","今晚"],["신나","sinna","嗨"],["자유","jayu","自由"],["함께","hamkke","一起"],["춤","chum","跳舞"],["가자","gaja","走吧"],["웃어","useo","笑"]]},
+ {ko:"BAD BOY","en":"Bad Boy",era:"經典 · 2012",story:"演唱會史上最常唱的曲目之一(僅次 Fantastic Baby/Bang Bang Bang),都會夜感、超耐聽。",chorus:"副歌情緒滿,跟著哼就很有味。",tip:"bad boy 尾音 d 收出來。",voc:[["나쁜","nappeun","壞"],["미안해","mianhae","對不起"],["혼자","honja","獨自"],["마음","maeum","心"],["이별","ibyeol","離別"],["밤","bam","夜"],["다시","dasi","再"]]},
  {ko:"FANTASTIC BABY","en":"Fantastic Baby",era:"經典 · 2012",story:"全球爆紅神曲,演唱會必炸,英文 hook 超好喊。",chorus:"「Wow fantastic baby」「붐 셔카라카」跟著喊就嗨。",tip:"bab 尾音 b 收住。",voc:[["춤","chum","跳舞"],["신나","sinna","嗨"],["자유","jayu","自由"],["소리","sori","聲音"],["빛나","binna","發光"],["최고","choego","最棒"],["가자","gaja","走吧"]]},
  {ko:"뱅뱅뱅","en":"Bang Bang Bang",era:"MADE · 2015",story:"MADE 時期代表作,節奏炸裂、現場氣氛王。",chorus:"「뱅뱅뱅」三連喊 + 「봐라 봐라」,先抓喊句。",tip:"뱅 baeng,받침 ㅇ 鼻音收住。",voc:[["봐","bwa","看"],["신나","sinna","嗨"],["춤","chum","跳舞"],["소리","sori","聲音"],["최고","choego","最棒"],["흔들어","heundeureo","搖擺"],["가자","gaja","走吧"]]},
  {ko:"LOSER","en":"Loser",era:"MADE · 2015",story:"少見的內省抒情曲,旋律好聽、適合慢慢咬字。",chorus:"「I'm a loser」英文 hook 好跟,韓文段慢練。",tip:"loser 的 r 輕,別太捲。",voc:[["혼자","honja","獨自"],["외로워","oerowo","寂寞"],["눈물","nunmul","眼淚"],["바보","babo","傻瓜"],["마음","maeum","心"],["아파","apa","痛"],["다시","dasi","再"]]},
@@ -119,9 +121,13 @@ blackpink:{name:"BLACKPINK",emoji:"🖤",cls:"blackpink",songs:[
  {ko:"휘파람","en":"Whistle",era:"出道 · 2016",story:"BLACKPINK 出道曲之一,輕鬆口哨旋律,很好上手。",chorus:"「휘파람」標題句 + 口哨聲,先抓主句。",tip:"휘 hwi,圓唇快帶過。",voc:[["휘파람","hwiparam","口哨"],["너","neo","你"],["마음","maeum","心"],["좋아","joa","喜歡"],["봐","bwa","看"],["멋져","meotjyeo","酷"],["사랑","sarang","愛"]]},
  {ko:"붐바야","en":"Boombayah",era:"出道 · 2016",story:"出道炸場神曲,演唱會開場氣氛王。",chorus:"「붐바야」喊句超好跟。",tip:"붐바야 bum-ba-ya,大聲喊出來。",voc:[["신나","sinna","嗨"],["춤","chum","跳舞"],["최고","choego","最棒"],["소리","sori","聲音"],["가자","gaja","走吧"],["봐","bwa","看"],["빛나","binna","發光"]]},
  {ko:"불장난","en":"Playing With Fire",era:"2016",story:"『玩火』比喻危險的愛,旋律好聽。",chorus:"副歌「불장난」抓主句。",tip:"불 bul,받침 ㄹ 收住。",voc:[["불","bul","火"],["사랑","sarang","愛"],["위험","wiheom","危險"],["마음","maeum","心"],["너","neo","你"],["아파","apa","痛"],["밤","bam","夜"]]},
+ {ko:"STAY","en":"Stay",era:"2016",story:"BLACKPINK 少見的木吉他抒情曲,演唱會大合唱必跟、最適合練咬字。",chorus:"「stay」拉長句慢慢跟。",tip:"stay 尾音清楚收。",voc:[["머물러","meomulleo","停留"],["너","neo","你"],["사랑","sarang","愛"],["마음","maeum","心"],["밤","bam","夜"],["혼자","honja","獨自"],["곁","gyeot","身邊"]]},
  {ko:"마지막처럼","en":"As If It's Your Last",era:"2017",story:"超洗腦的歡快歌,『像最後一次那樣愛』。",chorus:"「마지막처럼」一句好記。",tip:"처럼 cheo-reom,ㅓ 放鬆。",voc:[["사랑해","saranghae","我愛你"],["너","neo","你"],["마음","maeum","心"],["함께","hamkke","一起"],["춤","chum","跳舞"],["좋아해","joahae","喜歡你"],["오늘","oneul","今天"]]},
+ {ko:"Forever Young","en":"Forever Young",era:"2018",story:"粉絲心中的應援聖歌,演唱會大合唱、情緒最高點。",chorus:"「forever young」整段大合唱,務必學。",tip:"young 鼻音收尾。",voc:[["영원","yeongwon","永遠"],["청춘","cheongchun","青春"],["함께","hamkke","一起"],["자유","jayu","自由"],["빛나","binna","發光"],["좋아","joa","喜歡"],["우리","uri","我們"]]},
  {ko:"뚜두뚜두","en":"DDU-DU DDU-DU",era:"2018",story:"全球破紀錄的代表作,『뚜두뚜두』槍聲擬聲超洗腦。",chorus:"「뚜두뚜두」擬聲句最好跟。",tip:"뚜 ttu 緊音,用力短促。",voc:[["예뻐","yeppeo","漂亮"],["멋져","meotjyeo","酷"],["돈","don","錢"],["최고","choego","最棒"],["강해","ganghae","強"],["봐","bwa","看"],["빛나","binna","發光"]]},
+ {ko:"Don't Know What To Do","en":"Don't Know What To Do",era:"2019",story:"旋律抓耳的離別曲,演唱會常唱、副歌好跟。",chorus:"「don't know what to do」hook 好記。",tip:"do 圓唇收尾。",voc:[["몰라","molla","不知道"],["이별","ibyeol","離別"],["눈물","nunmul","眼淚"],["사랑","sarang","愛"],["마음","maeum","心"],["아파","apa","痛"],["다시","dasi","再"]]},
  {ko:"Kill This Love","en":"Kill This Love",era:"2019",story:"氣勢磅礡的代表作,英文 hook『kill this love』超好喊。",chorus:"「kill this love」英文句先抓,韓文段拼音跟。",tip:"love 尾音 v 咬下唇。",voc:[["사랑","sarang","愛"],["끝","kkeut","結束"],["이별","ibyeol","離別"],["안녕","annyeong","再見"],["아파","apa","痛"],["강해","ganghae","堅強"],["가자","gaja","走吧"]]},
+ {ko:"Pretty Savage","en":"Pretty Savage",era:"2020",story:"沒發過單曲卻是演唱會必唱的寶藏曲,氣場全開。",chorus:"「pretty savage」hook 超帥好喊。",tip:"savage 尾音 ge 輕。",voc:[["멋져","meotjyeo","帥"],["최고","choego","最棒"],["봐","bwa","看"],["강해","ganghae","強"],["돈","don","錢"],["신나","sinna","嗨"],["빛나","binna","發光"]]},
  {ko:"How You Like That","en":"How You Like That",era:"2020",story:"回歸炸場曲,『how you like that』英文 hook。",chorus:"英文 hook 好喊,間奏跟著節奏。",tip:"that 尾音 t 收。",voc:[["봐","bwa","看"],["다시","dasi","再一次"],["최고","choego","最棒"],["멋져","meotjyeo","酷"],["빛나","binna","發光"],["강해","ganghae","強"],["좋아","joa","讚"]]},
  {ko:"Lovesick Girls","en":"Lovesick Girls",era:"2020",story:"旋律抓耳的情歌,副歌英韓混,合唱感強。",chorus:"「lovesick girls」+ 韓文副歌都好跟。",tip:"girls 尾音 s 輕輕收。",voc:[["사랑","sarang","愛"],["아파","apa","痛"],["눈물","nunmul","眼淚"],["밤","bam","夜晚"],["혼자","honja","獨自"],["마음","maeum","心"],["너","neo","你"]]},
  {ko:"Pink Venom","en":"Pink Venom",era:"2022",story:"回歸主打,氣場全開。",chorus:"「pink venom」hook 好喊。",tip:"venom 的 v 咬下唇。",voc:[["멋져","meotjyeo","酷"],["빨강","ppalgang","紅色"],["봐","bwa","看"],["춤","chum","跳舞"],["강해","ganghae","厲害"],["최고","choego","最棒"],["신나","sinna","嗨"]]},
@@ -130,7 +136,9 @@ blackpink:{name:"BLACKPINK",emoji:"🖤",cls:"blackpink",songs:[
 ]},
 gd:{name:"G-DRAGON",emoji:"🌼",cls:"gd",songs:[
  {ko:"Heartbreaker","en":"Heartbreaker",era:"Solo 經典 · 2009",story:"GD 首張個人專輯主打,奠定他 solo 地位。",chorus:"「heartbreaker」英文 hook 好喊。",tip:"breaker 的 r 輕捲。",voc:[["마음","maeum","心"],["사랑","sarang","愛"],["너","neo","你"],["왜","wae","為什麼"],["눈물","nunmul","眼淚"],["이별","ibyeol","離別"],["아파","apa","痛"]]},
+ {ko:"니가 뭔데","en":"Who You?",era:"Solo 經典 · 2013",story:"輕快又有態度的歌,演唱會跟唱度高。",chorus:"「니가 뭔데」標題句好喊。",tip:"니가 ni-ga、뭔데 mwon-de。",voc:[["너","neo","你"],["누구","nugu","誰"],["마음","maeum","心"],["사랑","sarang","愛"],["왜","wae","為什麼"],["다시","dasi","再"],["혼자","honja","獨自"]]},
  {ko:"삐딱하게","en":"Crooked",era:"Solo 經典 · 2013",story:"叛逆搖滾感的失戀曲,『歪著走、放縱一次』。",chorus:"副歌情緒釋放,跟著吼也行。",tip:"삐딱 ppi-ttak,兩個緊音用力。",voc:[["혼자","honja","獨自"],["밤","bam","夜晚"],["눈물","nunmul","眼淚"],["자유","jayu","自由"],["미안해","mianhae","對不起"],["아파","apa","痛"],["다시","dasi","再"]]},
+ {ko:"그 XX","en":"That XX",era:"Solo 經典 · 2012",story:"半說半唱的抒情嘻哈,演唱會情緒名場面。",chorus:"副歌跟著念白也行,情緒到位最重要。",tip:"그 geu,ㅡ 嘴扁不嘟。",voc:[["나쁜","nappeun","壞"],["눈물","nunmul","眼淚"],["너","neo","你"],["마음","maeum","心"],["이별","ibyeol","離別"],["아파","apa","痛"],["진짜","jinjja","真的"]]},
  {ko:"크레용","en":"Crayon",era:"Solo 經典 · 2012",story:"鬼才電音派對歌,『crayon = crazy on』玩字。",chorus:"「크레용」+「get your crayon」好跟。",tip:"크레용 keu-re-yong,받침 ㅇ 收住。",voc:[["놀자","nolja","一起玩"],["신나","sinna","嗨"],["춤","chum","跳舞"],["웃어","useo","笑"],["가자","gaja","走吧"],["좋아","joa","讚"],["왜","wae","為什麼"]]},
  {ko:"One of a Kind","en":"One of a Kind",era:"Solo 經典 · 2012",story:"嘻哈態度十足的代表作,『獨一無二』。",chorus:"「one of a kind」英文 hook 好記。",tip:"kind 尾音 d 收。",voc:[["최고","choego","最棒"],["유일","yuil","唯一"],["멋져","meotjyeo","酷"],["봐","bwa","看"],["자유","jayu","自由"],["빛나","binna","發光"],["나","na","我"]]},
  {ko:"무제","en":"Untitled, 2014",era:"2017",story:"鋼琴抒情曲,情感真摯,旋律慢、最適合練咬字。",chorus:"整首慢,一句一句跟最有效。",tip:"무제 mu-je,慢速 0.75 練。",voc:[["사랑","sarang","愛"],["보고싶어","bogosipeo","想你"],["눈물","nunmul","眼淚"],["혼자","honja","獨自"],["기억","gieok","記憶"],["다시","dasi","再一次"],["너","neo","你"]]},
