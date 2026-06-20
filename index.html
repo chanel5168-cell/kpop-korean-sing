@@ -1,0 +1,265 @@
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>唱 K-POP 學韓語</title>
+<meta name="theme-color" content="#0d0d12">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="唱K-POP學韓語">
+<style>
+:root{
+  --bg:#0d0d12; --card:#1a1a24; --line:#2b2b3a; --txt:#f3f3f8; --dim:#a6a6bb;
+  --acc:#c6ff3a; --acc2:#8be0ff; --lav:#b9a8ff; --mint:#7df0c8;
+}
+body.cortis{ --acc:#c6ff3a; --acc2:#e9ff9a; }            /* HYBE 街頭螢光綠 */
+body.bigbang{ --acc:#ffd400; --acc2:#ffe97a; }           /* 皇冠黃 */
+body.blackpink{ --acc:#ff2d8e; --acc2:#ff9ccb; }         /* 桃紅 */
+body.gd{ --acc:#ff4d4d; --acc2:#ffb0b0; }                /* peaceminusone 紅 */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,"Noto Sans TC","Segoe UI",system-ui,sans-serif;font-size:15px;line-height:1.6}
+header{position:sticky;top:0;z-index:5;background:linear-gradient(180deg,var(--bg),rgba(13,13,18,.86));backdrop-filter:blur(8px);padding:12px 14px 8px;border-bottom:1px solid var(--line)}
+h1{margin:0;font-size:20px;letter-spacing:.5px}
+h1 b{color:var(--acc)}
+.sub{color:var(--dim);font-size:13px;margin-top:2px}
+.tabs{display:flex;gap:6px;margin-top:10px;overflow-x:auto;padding-bottom:2px}
+.tab{flex:0 0 auto;background:var(--card);border:1px solid var(--line);color:var(--dim);padding:9px 13px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer}
+.tab.on{background:var(--acc);color:#10101a;border-color:var(--acc)}
+.wrap{max-width:680px;margin:0 auto;padding:12px 14px 90px}
+.bar{height:8px;background:var(--line);border-radius:999px;overflow:hidden;margin:4px 0 2px}
+.bar>i{display:block;height:100%;background:var(--acc);width:0;transition:width .3s}
+.rate{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:13px;margin:10px 0}
+.rate input{flex:1}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--lav);border-radius:12px;padding:14px;margin:12px 0;font-size:14.5px}
+.era{color:var(--acc2);font-size:13px;font-weight:700;margin:16px 0 6px;letter-spacing:.5px;text-transform:uppercase}
+.song{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:9px 0;overflow:hidden}
+.shead{display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer}
+.shead .ko{font-size:18px;font-weight:800}
+.shead .en{color:var(--dim);font-size:13px}
+.shead .done{margin-left:auto;font-size:20px;opacity:.25}
+.song.learned .shead .done{opacity:1}
+.song.learned{border-color:var(--acc)}
+.body{display:none;padding:0 14px 14px;border-top:1px solid var(--line)}
+.song.open .body{display:block}
+.sec{margin:13px 0}
+.lab{font-size:13px;color:var(--acc2);font-weight:700;margin-bottom:5px}
+.story{font-size:14.5px;color:var(--txt)}
+.tip{font-size:14px;color:var(--dim);background:rgba(255,255,255,.03);border-radius:10px;padding:10px}
+.voc{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.spk{flex:0 0 auto;background:var(--line);border:none;color:var(--txt);width:38px;height:38px;border-radius:10px;font-size:17px;cursor:pointer}
+.k1{font-size:19px;font-weight:700}
+.k2{font-size:14px;color:var(--dim)}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0}
+.lk{flex:1 1 auto;text-align:center;background:var(--line);color:var(--txt);text-decoration:none;padding:11px 10px;border-radius:10px;font-size:14px;font-weight:600}
+.lk.tr{background:var(--acc);color:#10101a}
+.btn{display:inline-block;background:var(--acc);color:#10101a;border:none;border-radius:10px;padding:11px 16px;font-size:14.5px;font-weight:700;cursor:pointer;margin:4px 6px 0 0}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+.quiz{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:10px}
+.qq{font-size:16px;margin-bottom:10px}
+.qq b{font-size:22px;color:var(--acc2)}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);color:var(--txt);padding:13px;border-radius:10px;margin:7px 0;font-size:18px;cursor:pointer}
+.opt.ok{background:#1c4a2e;border-color:#2ecc71}
+.opt.no{background:#4a1c25;border-color:#ff5470}
+.qres{font-size:15px;margin-top:8px;font-weight:700}
+.foot{text-align:center;color:var(--dim);font-size:12px;margin-top:18px}
+</style></head><body>
+<header>
+  <h1>🎤 唱 <b>K-POP</b> 學韓語</h1>
+  <div class="sub">跟著愛的偶像唱、把韓文唱進心裡 · 點 🔊 聽韓語發音</div>
+  <div class="tabs" id="tabs"></div>
+</header>
+<div class="wrap" id="wrap"></div>
+
+<script>
+/* ===== 語速 ===== */
+let RATE=parseFloat(localStorage.getItem("koRate")||"0.85");
+function speak(t,lang){try{const u=new SpeechSynthesisUtterance(t);u.lang=lang||"ko-KR";u.rate=RATE;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+const enc=s=>encodeURIComponent(s);
+
+/* ===== 한글 跟唱攻略(常用字非歌詞) ===== */
+const KCHEAT=[
+["안녕","annyeong","嗨/你好"],["사랑해","saranghae","我愛你"],["보고싶어","bogosipeo","好想你"],
+["너","neo","你"],["나","na","我"],["가자","gaja","走吧/一起來"],["좋아","joa","喜歡/好"],
+["최고","choego","最棒"],["괜찮아","gwaenchana","沒關係"],["고마워","gomawo","謝謝"],
+["예뻐","yeppeo","漂亮"],["신나","sinna","超嗨/興奮"]];
+function koCard(){return `<div class="note">
+🇰🇷 <b>한글 跟唱 &amp; 咬字攻略</b><br><br>
+1️⃣ <b>真要咬字準,先學 한글</b>:只有 40 音、規則超清楚,1～2 小時就能自己讀,發音最準。你的「語言學習 AI」有韓文字母練習可以搭。<br><br>
+2️⃣ <b>台灣人最容易念錯</b>:<br>
+　• <b>ㄹ</b>:介於 L／R,唱快歌時輕輕彈過<br>
+　• <b>ㅓ(eo)≠ㅗ(o)</b>:ㅓ 放鬆像「ㄜ」,ㅗ 嘟嘴像「ㄛ」<br>
+　• <b>緊音 ㄲㄸㅃㅆㅉ</b>:用力、短促、不送氣<br>
+　• <b>收尾音(받침)</b>:字尾子音要收住別吞掉<br><br>
+3️⃣ <b>練整首</b>:每首點「🇰🇷 拼音歌詞」看羅馬拼音跟著念,再點「🎤 跟唱影片」用 YouTube 調 <b>0.75 倍速</b>一句一句跟。<br><br>
+🔊 <b>先念念這些常用字</b>(點 🔊 聽、跟著咬清楚):
+<div style="margin-top:8px">${KCHEAT.map(k=>`<div class="voc"><button class="spk" onclick="speak('${k[0]}')">🔊</button><div><span class="k1">${k[0]}</span> <span class="k2">${k[1]} · ${k[2]}</span></div></div>`).join("")}</div>
+</div>`;}
+
+/* ===== 資料:每首 voc 為依主題挑的常用韓文詞,非歌詞;整首歌詞一律外連 ===== */
+const ARTISTS={
+cortis:{name:"CORTIS",emoji:"🟢",cls:"cortis",songs:[
+ {ko:"GO!",en:"GO!",era:"出道 2025 · Color Outside the Lines",story:"HYBE／BigHit 2025 出道的自製少年團 CORTIS 的出道前導曲,衝勁滿滿、最好上口,當你的第一首。",chorus:"副歌「GO!」短促有力,先把這個喊句抓穩,其餘段落再慢慢補。",tip:"GO 的 o 嘟嘴像「ㄛ」,別念成台灣的『勾』。",voc:[["가자","gaja","走吧"],["시작","sijak","開始"],["꿈","kkum","夢想"],["최고","choego","最棒"],["달려","dallyeo","奔跑"],["우리","uri","我們"],["자유","jayu","自由"]]},
+ {ko:"What You Want",en:"What You Want",era:"出道 2025 · Color Outside the Lines",story:"首張 EP 的主打,旋律抓耳、英文歌名好記,適合練英韓混唱。",chorus:"hook 反覆「What you want」,韓文段落用拼音跟。",tip:"want 的尾音 t 輕輕收出來。",voc:[["원해","wonhae","想要"],["너","neo","你"],["마음","maeum","心"],["진짜","jinjja","真的"],["가져","gajyeo","擁有/拿"],["좋아","joa","喜歡"],["말해","malhae","說出來"]]},
+ {ko:"FaSHioN","en":"FaSHioN",era:"出道 2025 · Color Outside the Lines",story:"展現團體自我風格的歌,節奏俐落。",chorus:"記住標題喊句 FaSHioN,當段落定位點。",tip:"fa 的 a 張開,別含糊。",voc:[["멋져","meotjyeo","帥/酷"],["스타일","seutail","風格"],["빛나","binna","發光"],["새로워","saerowo","新穎"],["봐","bwa","看"],["최고","choego","最棒"],["우리","uri","我們"]]},
+ {ko:"JoyRide",en:"JoyRide",era:"出道 2025 · Color Outside the Lines",story:"輕快兜風感的歌,情緒放鬆好跟。",chorus:"副歌氛圍歡樂,跟著節奏哼也行。",tip:"r 輕捲,別卡。",voc:[["신나","sinna","興奮"],["놀자","nolja","一起玩"],["달려","dallyeo","奔馳"],["자유","jayu","自由"],["웃어","useo","笑"],["함께","hamkke","一起"],["오늘","oneul","今天"]]},
+ {ko:"Lullaby",en:"Lullaby",era:"出道 2025 · Color Outside the Lines",story:"收尾的慢歌,旋律柔、速度慢,最適合練韓文咬字。",chorus:"慢速跟唱,把每個받침收尾音念清楚。",tip:"慢歌把語速拉到 0.75 練最有效。",voc:[["밤","bam","夜晚"],["꿈","kkum","夢"],["잘자","jalja","晚安"],["마음","maeum","心"],["따뜻해","ttatteutae","溫暖"],["편해","pyeonhae","安心"],["너","neo","你"]]},
+]},
+bigbang:{name:"BIGBANG",emoji:"👑",cls:"bigbang",songs:[
+ {ko:"거짓말","en":"Lies",era:"經典 · 2007",story:"BIGBANG 真正爆紅的代表作,一聽就會記住的口哨前奏。",chorus:"副歌「거짓말 거짓말 거짓말」三連發最好跟,先抓這句。",tip:"거짓말 geo-jit-mal,ㅓ 放鬆別嘟嘴。",voc:[["거짓말","geojitmal","謊言"],["미안해","mianhae","對不起"],["사랑","sarang","愛"],["눈물","nunmul","眼淚"],["이별","ibyeol","離別"],["혼자","honja","獨自"],["마음","maeum","心"]]},
+ {ko:"하루하루","en":"Haru Haru",era:"經典 · 2008",story:"國民級分手情歌,旋律抒情、副歌大合唱必跟。",chorus:"「하루하루」反覆句,慢速最好練。",tip:"하루 ha-ru,ㄹ 輕彈。",voc:[["하루","haru","一天"],["잘가","jalga","好走"],["눈물","nunmul","眼淚"],["사랑","sarang","愛"],["보고싶어","bogosipeo","想你"],["아파","apa","痛"],["다시","dasi","再"]]},
+ {ko:"FANTASTIC BABY","en":"Fantastic Baby",era:"經典 · 2012",story:"全球爆紅神曲,演唱會必炸,英文 hook 超好喊。",chorus:"「Wow fantastic baby」「붐 셔카라카」跟著喊就嗨。",tip:"bab 尾音 b 收住。",voc:[["춤","chum","跳舞"],["신나","sinna","嗨"],["자유","jayu","自由"],["소리","sori","聲音"],["빛나","binna","發光"],["최고","choego","最棒"],["가자","gaja","走吧"]]},
+ {ko:"뱅뱅뱅","en":"Bang Bang Bang",era:"MADE · 2015",story:"MADE 時期代表作,節奏炸裂、現場氣氛王。",chorus:"「뱅뱅뱅」三連喊 + 「봐라 봐라」,先抓喊句。",tip:"뱅 baeng,받침 ㅇ 鼻音收住。",voc:[["봐","bwa","看"],["신나","sinna","嗨"],["춤","chum","跳舞"],["소리","sori","聲音"],["최고","choego","最棒"],["흔들어","heundeureo","搖擺"],["가자","gaja","走吧"]]},
+ {ko:"LOSER","en":"Loser",era:"MADE · 2015",story:"少見的內省抒情曲,旋律好聽、適合慢慢咬字。",chorus:"「I'm a loser」英文 hook 好跟,韓文段慢練。",tip:"loser 的 r 輕,別太捲。",voc:[["혼자","honja","獨自"],["외로워","oerowo","寂寞"],["눈물","nunmul","眼淚"],["바보","babo","傻瓜"],["마음","maeum","心"],["아파","apa","痛"],["다시","dasi","再"]]},
+ {ko:"BAE BAE","en":"Bae Bae",era:"MADE · 2015",story:"復古放克風,輕鬆討喜。",chorus:"「베베」軟軟的喊句好記。",tip:"베 be,嘴角放鬆。",voc:[["사랑","sarang","愛"],["너","neo","你"],["예뻐","yeppeo","漂亮"],["안녕","annyeong","嗨"],["마음","maeum","心"],["좋아","joa","喜歡"],["함께","hamkke","一起"]]},
+ {ko:"에라 모르겠다","en":"Fxxk It",era:"MADE · 2016",story:"灑脫派對歌,『管它的、盡情玩』的態度。",chorus:"「에라 모르겠다」一句喊出來最解壓。",tip:"모르겠다 mo-reu-get-da,一字一字慢念。",voc:[["몰라","molla","不知道/管它"],["신나","sinna","嗨"],["자유","jayu","自由"],["놀자","nolja","玩吧"],["오늘","oneul","今天"],["웃어","useo","笑"],["가자","gaja","走吧"]]},
+ {ko:"맨정신","en":"Sober",era:"MADE · 2015",story:"輕快卻有態度的歌,旋律明亮。",chorus:"「맨정신」標題句先抓。",tip:"맨 maen,ㅐ 嘴張比 ㅔ 大一點。",voc:[["정신","jeongsin","清醒/精神"],["혼자","honja","獨自"],["돈","don","錢"],["자유","jayu","自由"],["미쳐","michyeo","瘋狂"],["마음","maeum","心"],["다시","dasi","再"]]},
+ {ko:"LAST DANCE","en":"Last Dance",era:"MADE · 2016",story:"獻給歌迷的溫暖抒情曲,旋律慢、字字清楚,練韓文超推。",chorus:"整首慢,適合一句一句跟著咬字。",tip:"慢歌把語速拉到 0.75。",voc:[["마지막","majimak","最後"],["춤","chum","跳舞"],["함께","hamkke","一起"],["기억","gieok","回憶"],["사랑","sarang","愛"],["밤","bam","夜晚"],["고마워","gomawo","謝謝"]]},
+ {ko:"봄여름가을겨울","en":"Still Life",era:"2022",story:"四人時期的回歸作,歌名就是『春夏秋冬』,溫柔懷舊。",chorus:"副歌唱四季,旋律好記。",tip:"봄/여름/가을/겨울 四個季節一起記最划算。",voc:[["봄","bom","春"],["여름","yeoreum","夏"],["가을","gaeul","秋"],["겨울","gyeoul","冬"],["시간","sigan","時間"],["기억","gieok","回憶"],["너","neo","你"]]},
+]},
+blackpink:{name:"BLACKPINK",emoji:"🖤",cls:"blackpink",songs:[
+ {ko:"휘파람","en":"Whistle",era:"出道 · 2016",story:"BLACKPINK 出道曲之一,輕鬆口哨旋律,很好上手。",chorus:"「휘파람」標題句 + 口哨聲,先抓主句。",tip:"휘 hwi,圓唇快帶過。",voc:[["휘파람","hwiparam","口哨"],["너","neo","你"],["마음","maeum","心"],["좋아","joa","喜歡"],["봐","bwa","看"],["멋져","meotjyeo","酷"],["사랑","sarang","愛"]]},
+ {ko:"붐바야","en":"Boombayah",era:"出道 · 2016",story:"出道炸場神曲,演唱會開場氣氛王。",chorus:"「붐바야」喊句超好跟。",tip:"붐바야 bum-ba-ya,大聲喊出來。",voc:[["신나","sinna","嗨"],["춤","chum","跳舞"],["최고","choego","最棒"],["소리","sori","聲音"],["가자","gaja","走吧"],["봐","bwa","看"],["빛나","binna","發光"]]},
+ {ko:"불장난","en":"Playing With Fire",era:"2016",story:"『玩火』比喻危險的愛,旋律好聽。",chorus:"副歌「불장난」抓主句。",tip:"불 bul,받침 ㄹ 收住。",voc:[["불","bul","火"],["사랑","sarang","愛"],["위험","wiheom","危險"],["마음","maeum","心"],["너","neo","你"],["아파","apa","痛"],["밤","bam","夜"]]},
+ {ko:"마지막처럼","en":"As If It's Your Last",era:"2017",story:"超洗腦的歡快歌,『像最後一次那樣愛』。",chorus:"「마지막처럼」一句好記。",tip:"처럼 cheo-reom,ㅓ 放鬆。",voc:[["사랑해","saranghae","我愛你"],["너","neo","你"],["마음","maeum","心"],["함께","hamkke","一起"],["춤","chum","跳舞"],["좋아해","joahae","喜歡你"],["오늘","oneul","今天"]]},
+ {ko:"뚜두뚜두","en":"DDU-DU DDU-DU",era:"2018",story:"全球破紀錄的代表作,『뚜두뚜두』槍聲擬聲超洗腦。",chorus:"「뚜두뚜두」擬聲句最好跟。",tip:"뚜 ttu 緊音,用力短促。",voc:[["예뻐","yeppeo","漂亮"],["멋져","meotjyeo","酷"],["돈","don","錢"],["최고","choego","最棒"],["강해","ganghae","強"],["봐","bwa","看"],["빛나","binna","發光"]]},
+ {ko:"Kill This Love","en":"Kill This Love",era:"2019",story:"氣勢磅礡的代表作,英文 hook『kill this love』超好喊。",chorus:"「kill this love」英文句先抓,韓文段拼音跟。",tip:"love 尾音 v 咬下唇。",voc:[["사랑","sarang","愛"],["끝","kkeut","結束"],["이별","ibyeol","離別"],["안녕","annyeong","再見"],["아파","apa","痛"],["강해","ganghae","堅強"],["가자","gaja","走吧"]]},
+ {ko:"How You Like That","en":"How You Like That",era:"2020",story:"回歸炸場曲,『how you like that』英文 hook。",chorus:"英文 hook 好喊,間奏跟著節奏。",tip:"that 尾音 t 收。",voc:[["봐","bwa","看"],["다시","dasi","再一次"],["최고","choego","最棒"],["멋져","meotjyeo","酷"],["빛나","binna","發光"],["강해","ganghae","強"],["좋아","joa","讚"]]},
+ {ko:"Lovesick Girls","en":"Lovesick Girls",era:"2020",story:"旋律抓耳的情歌,副歌英韓混,合唱感強。",chorus:"「lovesick girls」+ 韓文副歌都好跟。",tip:"girls 尾音 s 輕輕收。",voc:[["사랑","sarang","愛"],["아파","apa","痛"],["눈물","nunmul","眼淚"],["밤","bam","夜晚"],["혼자","honja","獨自"],["마음","maeum","心"],["너","neo","你"]]},
+ {ko:"Pink Venom","en":"Pink Venom",era:"2022",story:"回歸主打,氣場全開。",chorus:"「pink venom」hook 好喊。",tip:"venom 的 v 咬下唇。",voc:[["멋져","meotjyeo","酷"],["빨강","ppalgang","紅色"],["봐","bwa","看"],["춤","chum","跳舞"],["강해","ganghae","厲害"],["최고","choego","最棒"],["신나","sinna","嗨"]]},
+ {ko:"Shut Down","en":"Shut Down",era:"2022",story:"取樣帕格尼尼小提琴的回歸曲,高級又洗腦。",chorus:"「shut it down」hook 跟著喊。",tip:"down 圓唇收尾。",voc:[["최고","choego","最棒"],["봐","bwa","看"],["멋져","meotjyeo","酷"],["강해","ganghae","強"],["돈","don","錢"],["다시","dasi","再次"],["가자","gaja","走吧"]]},
+ {ko:"뛰어","en":"Jump",era:"2025 回歸",story:"2025 久違回歸單曲,『뛰어(跳)』派對能量全開,演唱會必跳。",chorus:"「뛰어 뛰어」喊句 + jump,最好帶動。",tip:"뛰어 ttwi-eo,緊音 ㄸ 用力。",voc:[["뛰어","ttwieo","跳"],["신나","sinna","嗨"],["자유","jayu","自由"],["가자","gaja","走吧"],["높이","nopi","高高地"],["함께","hamkke","一起"],["최고","choego","最棒"]]},
+]},
+gd:{name:"G-DRAGON",emoji:"🌼",cls:"gd",songs:[
+ {ko:"Heartbreaker","en":"Heartbreaker",era:"Solo 經典 · 2009",story:"GD 首張個人專輯主打,奠定他 solo 地位。",chorus:"「heartbreaker」英文 hook 好喊。",tip:"breaker 的 r 輕捲。",voc:[["마음","maeum","心"],["사랑","sarang","愛"],["너","neo","你"],["왜","wae","為什麼"],["눈물","nunmul","眼淚"],["이별","ibyeol","離別"],["아파","apa","痛"]]},
+ {ko:"삐딱하게","en":"Crooked",era:"Solo 經典 · 2013",story:"叛逆搖滾感的失戀曲,『歪著走、放縱一次』。",chorus:"副歌情緒釋放,跟著吼也行。",tip:"삐딱 ppi-ttak,兩個緊音用力。",voc:[["혼자","honja","獨自"],["밤","bam","夜晚"],["눈물","nunmul","眼淚"],["자유","jayu","自由"],["미안해","mianhae","對不起"],["아파","apa","痛"],["다시","dasi","再"]]},
+ {ko:"크레용","en":"Crayon",era:"Solo 經典 · 2012",story:"鬼才電音派對歌,『crayon = crazy on』玩字。",chorus:"「크레용」+「get your crayon」好跟。",tip:"크레용 keu-re-yong,받침 ㅇ 收住。",voc:[["놀자","nolja","一起玩"],["신나","sinna","嗨"],["춤","chum","跳舞"],["웃어","useo","笑"],["가자","gaja","走吧"],["좋아","joa","讚"],["왜","wae","為什麼"]]},
+ {ko:"One of a Kind","en":"One of a Kind",era:"Solo 經典 · 2012",story:"嘻哈態度十足的代表作,『獨一無二』。",chorus:"「one of a kind」英文 hook 好記。",tip:"kind 尾音 d 收。",voc:[["최고","choego","最棒"],["유일","yuil","唯一"],["멋져","meotjyeo","酷"],["봐","bwa","看"],["자유","jayu","自由"],["빛나","binna","發光"],["나","na","我"]]},
+ {ko:"무제","en":"Untitled, 2014",era:"2017",story:"鋼琴抒情曲,情感真摯,旋律慢、最適合練咬字。",chorus:"整首慢,一句一句跟最有效。",tip:"무제 mu-je,慢速 0.75 練。",voc:[["사랑","sarang","愛"],["보고싶어","bogosipeo","想你"],["눈물","nunmul","眼淚"],["혼자","honja","獨自"],["기억","gieok","記憶"],["다시","dasi","再一次"],["너","neo","你"]]},
+ {ko:"POWER","en":"POWER",era:"回歸 · 2024",story:"睽違多年的回歸單曲,氣場全開、宣告王者回歸。",chorus:"「power」hook 強而有力,好喊。",tip:"power 圓唇,尾音 r 輕。",voc:[["최고","choego","最棒"],["돈","don","錢"],["강해","ganghae","強"],["봐","bwa","看"],["빛나","binna","發光"],["멋져","meotjyeo","酷"],["가자","gaja","走吧"]]},
+ {ko:"HOME SWEET HOME","en":"Home Sweet Home",era:"Übermensch · 2025",story:"與太陽、大聲合作、獻給 VIP 的歌,搖滾又溫暖。",chorus:"「home sweet home」英文 hook 大合唱。",tip:"home 圓唇,尾音 m 抿住。",voc:[["집","jip","家"],["함께","hamkke","一起"],["친구","chingu","朋友"],["고마워","gomawo","謝謝"],["우리","uri","我們"],["행복","haengbok","幸福"],["돌아와","dorawa","回來"]]},
+ {ko:"TOO BAD","en":"Too Bad",era:"Übermensch · 2025",story:"與 Anderson .Paak 合作的放克舞曲,2025 主打,超好跳。",chorus:"「too bad」hook 輕鬆好跟。",tip:"bad 尾音 d 收。",voc:[["아쉬워","aswiwo","可惜"],["너","neo","你"],["밤","bam","夜"],["춤","chum","跳舞"],["마음","maeum","心"],["신나","sinna","嗨"],["다시","dasi","再"]]},
+ {ko:"DRAMA","en":"Drama",era:"Übermensch · 2025",story:"2025 專輯收錄曲,把人生比喻成一齣戲。",chorus:"「drama」標題句好記。",tip:"drama 的 r 輕捲。",voc:[["드라마","deurama","戲劇"],["인생","insaeng","人生"],["너","neo","你"],["마음","maeum","心"],["자유","jayu","自由"],["웃어","useo","笑"],["다시","dasi","再"]]},
+]},
+};
+
+/* ===== 狀態 ===== */
+let ART=localStorage.getItem("kArt")||"cortis";
+if(!ARTISTS[ART])ART="cortis";
+const doneKey=a=>"kDone_"+a;
+function getDone(a){try{return JSON.parse(localStorage.getItem(doneKey(a))||"[]");}catch(e){return [];}}
+function toggleDone(i){const d=getDone(ART);const k=d.indexOf(i);if(k<0)d.push(i);else d.splice(k,1);localStorage.setItem(doneKey(ART),JSON.stringify(d));render();}
+
+/* ===== 渲染 ===== */
+function setRate(v){RATE=parseFloat(v);localStorage.setItem("koRate",RATE);document.getElementById("rv").textContent=RATE.toFixed(2)+"×";}
+function pick(a){ART=a;localStorage.setItem("kArt",a);render();window.scrollTo(0,0);}
+function toggleSong(i){const el=document.getElementById("song"+i);el.classList.toggle("open");}
+
+function songCard(s,i){
+ const done=getDone(ART).includes(i);
+ const who=ARTISTS[ART].name;
+ const q=enc(who+" "+s.en);
+ return `<div class="song${done?" learned":""}" id="song${i}">
+  <div class="shead" onclick="toggleSong(${i})">
+    <div><div class="ko">${s.ko}</div><div class="en">${s.en} · ${s.era}</div></div>
+    <div class="done">✅</div>
+  </div>
+  <div class="body">
+    <div class="sec"><div class="lab">🎬 歌曲故事</div><div class="story">${s.story}</div></div>
+    <div class="sec"><div class="lab">🎯 副歌跟唱重點</div><div class="story">${s.chorus}</div></div>
+    <div class="sec"><div class="lab">🗣️ 咬字 tip</div><div class="tip">${s.tip}</div></div>
+    <div class="sec"><div class="lab">🇰🇷 這首的韓文單字(點 🔊 聽韓語)</div>
+      ${s.voc.map(v=>`<div class="voc"><button class="spk" onclick="speak('${v[0]}')">🔊</button><div><span class="k1">${v[0]}</span> <span class="k2">${v[1]} · ${v[2]}</span></div></div>`).join("")}
+    </div>
+    <div class="sec"><div class="lab">🎤 整首在這裡練(版權關係不放歌詞進 App)</div>
+      <div class="links">
+        <a class="lk tr" target="_blank" href="https://www.google.com/search?q=${enc(s.en+" "+who+" romanized lyrics 가사 발음")}">🇰🇷 拼音歌詞</a>
+        <a class="lk" target="_blank" href="https://www.youtube.com/results?search_query=${q}+lyrics">🎬 MV</a>
+        <a class="lk" target="_blank" href="https://www.youtube.com/results?search_query=${q}+karaoke">🎤 跟唱影片</a>
+      </div>
+      <div style="color:var(--dim);font-size:13px">看拼音跟著念 → 開跟唱影片用 0.75 倍速一句一句練。</div></div>
+    <div class="sec">
+      <button class="btn" onclick="startQuiz(${i})">📝 隨堂小測驗</button>
+      <button class="btn ghost" onclick="toggleDone(${i})">${done?"↩️ 取消學會":"✅ 標記學會"}</button>
+      <div id="quiz${i}"></div>
+    </div>
+  </div></div>`;
+}
+
+function render(){
+ const a=ARTISTS[ART];
+ document.body.className=a.cls;
+ document.getElementById("tabs").innerHTML=Object.keys(ARTISTS).map(k=>`<button class="tab${k===ART?" on":""}" onclick="pick('${k}')">${ARTISTS[k].emoji} ${ARTISTS[k].name}</button>`).join("");
+ const done=getDone(ART);const total=a.songs.length;const pct=Math.round(done.length/total*100);
+ let h=`<div style="font-size:14px;color:var(--dim)">已學會 <b style="color:var(--acc);font-size:16px">${done.length}</b> / ${total} 首</div>
+  <div class="bar"><i style="width:${pct}%"></i></div>
+  <div class="rate">🐢 跟唱語速 <input type="range" min="0.5" max="1.1" step="0.05" value="${RATE}" oninput="setRate(this.value)"> <span id="rv">${RATE.toFixed(2)}×</span></div>`;
+ h+=koCard();
+ // 依 era 分組
+ let lastEra="";
+ a.songs.forEach((s,i)=>{ if(s.era!==lastEra){h+=`<div class="era">${s.era}</div>`;lastEra=s.era;} h+=songCard(s,i); });
+ h+=`<div class="foot">跟著愛的偶像把韓文唱進心裡 🎤 · 進度存在這支手機 · 想加歌或加第二支(Super Junior…)再跟我說</div>`;
+ document.getElementById("wrap").innerHTML=h;
+}
+
+/* ===== 隨堂測驗:中文→한글 四選一,選項依「意思」去重避免重複答案 ===== */
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function poolAll(){const p=[];ARTISTS[ART].songs.forEach(s=>s.voc.forEach(v=>p.push(v)));return p;}
+function startQuiz(i){
+ const s=ARTISTS[ART].songs[i];const box=document.getElementById("quiz"+i);
+ const qs=shuffle(s.voc).slice(0,Math.min(5,s.voc.length));
+ const pool=poolAll();
+ box.dataset.qi=0;box.dataset.score=0;box.dataset.total=qs.length;
+ box._qs=qs;box._pool=pool;
+ showQ(i);
+}
+function showQ(i){
+ const box=document.getElementById("quiz"+i);const qi=+box.dataset.qi;const qs=box._qs;
+ if(qi>=qs.length){
+   const sc=+box.dataset.score,t=+box.dataset.total;
+   const msg=sc===t?"🏆 全對!你超強":sc>=t*0.6?"👍 不錯,再來一次更熟":"💪 多聽幾次發音,再挑戰";
+   box.innerHTML=`<div class="quiz"><div class="qres">得分 ${sc}/${t} — ${msg}</div><button class="btn" onclick="startQuiz(${i})">🔁 再測一次</button></div>`;return;
+ }
+ const correct=qs[qi];
+ // 干擾項:意思(中文)不同的詞,去重
+ const seen={[correct[2]]:1};const distract=[];
+ shuffle(box._pool).forEach(v=>{ if(distract.length<3 && !seen[v[2]]){seen[v[2]]=1;distract.push(v);} });
+ const opts=shuffle([correct,...distract]);
+ box.innerHTML=`<div class="quiz">
+   <div style="color:var(--dim);font-size:13px">第 ${qi+1}/${qs.length} 題 · 哪個韓文是這個意思?</div>
+   <div class="qq"><b>${correct[2]}</b></div>
+   ${opts.map(o=>`<button class="opt" onclick="answer(${i},'${o[0]}','${correct[0]}')">${o[0]} <span style="color:var(--dim);font-size:14px">${o[1]}</span></button>`).join("")}
+   <div class="qres" id="qr${i}"></div></div>`;
+}
+function answer(i,chosen,correct){
+ const box=document.getElementById("quiz"+i);
+ const btns=box.querySelectorAll(".opt");
+ btns.forEach(b=>{b.onclick=null;const ko=b.textContent.trim().split(" ")[0];if(ko===correct)b.classList.add("ok");else if(ko===chosen)b.classList.add("no");});
+ const ok=chosen===correct;
+ if(ok)box.dataset.score=(+box.dataset.score)+1;
+ speak(correct);
+ document.getElementById("qr"+i).innerHTML=(ok?"✅ 答對!":"❌ 正解:"+correct)+` <button class="btn" style="margin-left:8px" onclick="nextQ(${i})">下一題 ▶</button>`;
+}
+function nextQ(i){const box=document.getElementById("quiz"+i);box.dataset.qi=(+box.dataset.qi)+1;showQ(i);}
+
+/* ===== PWA manifest(可加主畫面) ===== */
+try{const m={name:"唱K-POP學韓語",short_name:"K-POP韓語",start_url:".",display:"standalone",background_color:"#0d0d12",theme_color:"#0d0d12",icons:[{src:"data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192"><rect width="192" height="192" fill="#0d0d12"/><text x="96" y="130" font-size="120" text-anchor="middle">🎤</text></svg>'),sizes:"192x192",type:"image/svg+xml"}]};
+const blob=new Blob([JSON.stringify(m)],{type:"application/json"});const l=document.createElement("link");l.rel="manifest";l.href=URL.createObjectURL(blob);document.head.appendChild(l);}catch(e){}
+
+render();
+
+/* ===== 自我檢查:?test 時跑,驗資料完整 + 去重邏輯 ===== */
+function selftest(){
+ let n=0,ok=0;
+ for(const a in ARTISTS)ARTISTS[a].songs.forEach(s=>{
+   n++;console.assert(s.ko&&s.en&&s.story&&s.chorus&&s.tip,"缺欄位",a,s.en);
+   console.assert(Array.isArray(s.voc)&&s.voc.length>=4,"voc<4",a,s.en);
+   s.voc.forEach(v=>console.assert(v.length===3&&/[가-힣]/.test(v[0]),"voc格式",a,s.en,v));
+   ok++;
+ });
+ // 去重:correct 的意思不該出現在干擾項
+ const c=["사랑","sarang","愛"];const seen={[c[2]]:1};let dup=0;
+ poolAll().forEach(v=>{if(v[2]===c[2]&&v[0]!==c[0])return;if(seen[v[2]]&&v[0]!==c[0])dup++;});
+ console.log(`✅ selftest:${ok}/${n} 首通過,共 ${poolAll().length} 個單字`);
+}
+if(location.search.includes("test"))selftest();
+</script>
+</body></html>
